@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
+import 'package:get/route_manager.dart';
 import 'package:worldwideadverts/Screens/widgets/my_drawer_item.dart';
 
 
