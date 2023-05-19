@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:worldwideadverts/Screens/AboutUs/about_us_view.dart';
 import 'package:worldwideadverts/Screens/HomeScreen/homepage.dart';
+import 'package:worldwideadverts/Screens/PrivacyPolicy/privacy_policy_view.dart';
 import 'package:worldwideadverts/Screens/SettingScreen/settings_view.dart';
 import 'Screens/Auth/loginscreen.dart';
 
@@ -65,7 +67,7 @@ class MyApp extends StatelessWidget {
       //   LoginScreen: (context) => LoginScreen(),
       //   // DashboardScreen.routeName: (context) => const DashboardScreen(),
       // },
-      home: SettingView(),
+      home: PRivacyView(),
     );
   }
 }
