@@ -1,8 +1,6 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:worldwideadverts/Screens/widgets/app_container1.dart';
-import 'package:worldwideadverts/Screens/widgets/app_cotainer.dart';
 import 'package:worldwideadverts/Screens/widgets/drawer.dart';
 
 class FavouriteListPage extends StatelessWidget {
@@ -71,17 +69,6 @@ class FavouriteListPage extends StatelessWidget {
               const SizedBox(
                 height: 12,
               ),
-              // SingleChildScrollView(
-              //   scrollDirection: Axis.horizontal,
-              //   child: Row(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     mainAxisAlignment: MainAxisAlignment.start,
-              //     children: [
-              //       myAppContiner1("JEMBI HEALTH SYSTEMS", "South Africa",
-              //           "https://images.pexels.com/photos/15252557/pexels-photo-15252557/free-photo-of-man-taking-photo-on-street.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-              //     ],
-              //   ),
-              // ),
               Expanded(
                   child: GridView.count(
                 crossAxisCount: 2,
@@ -118,13 +105,14 @@ class FavouriteListPage extends StatelessWidget {
             //     color: AppColors.boldtextColour),
             type: BottomNavigationBarType.fixed,
             items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.shop), label: ''),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite_outlined), label: ''),
+                  icon: Icon(Icons.home_outlined), label: 'Home'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart), label: ''),
+                  icon: Icon(Icons.favorite_outlined), label: 'Favourite'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart), label: ''),
+                  icon: Icon(Icons.shopping_cart), label: 'Shopping'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person), label: 'Profile'),
             ]),
       ),
     );

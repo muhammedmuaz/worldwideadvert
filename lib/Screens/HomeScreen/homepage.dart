@@ -1,7 +1,8 @@
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:worldwideadverts/Screens/Categories/categories_view.dart';
 
 import 'package:worldwideadverts/Screens/widgets/drawer.dart';
 
@@ -150,11 +151,16 @@ class HomePage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 12),
-                child: Text(
-                  "Categories",
-                  style: GoogleFonts.playfairDisplay(
-                      textStyle: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold)),
+                child: GestureDetector(
+                  onTap: () {
+                    Get.to(const CategoriesPage());
+                  },
+                  child: Text(
+                    "Categories",
+                    style: GoogleFonts.playfairDisplay(
+                        textStyle: const TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold)),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -460,13 +466,14 @@ class HomePage extends StatelessWidget {
             //     color: AppColors.boldtextColour),
             type: BottomNavigationBarType.fixed,
             items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.shop), label: ''),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite_outlined), label: ''),
+                  icon: Icon(Icons.home_outlined), label: 'Home'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart), label: ''),
+                  icon: Icon(Icons.favorite_outlined), label: 'Favourite'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart), label: ''),
+                  icon: Icon(Icons.shopping_cart), label: 'Shopping'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person), label: 'Profile'),
             ]),
       ),
     );

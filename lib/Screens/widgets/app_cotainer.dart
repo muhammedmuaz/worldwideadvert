@@ -6,10 +6,7 @@ Widget myAppContiner(final String label, final String imageName) {
     elevation: 1,
     color: Colors.white,
     child: Container(
-      height: 189,
-      width: 200.0,
       decoration: BoxDecoration(
-          // color: Colors.amberAccent,
           borderRadius: BorderRadius.circular(16)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -27,7 +24,7 @@ Widget myAppContiner(final String label, final String imageName) {
                     image: NetworkImage(imageName.toString()))),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 60.0, top: 5.0),
+            padding: const EdgeInsets.only(left: 50.0, top: 5.0),
             child: Text(
               label,
               style: GoogleFonts.playfairDisplay(

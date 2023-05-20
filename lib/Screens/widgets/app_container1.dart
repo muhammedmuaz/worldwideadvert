@@ -7,7 +7,7 @@ Widget myAppContiner1(
     elevation: 1,
     color: Colors.white,
     child: Container(
-      height: 250,
+      height: 200,
       width: 200.0,
       decoration: BoxDecoration(
           // color: Colors.amberAccent,
