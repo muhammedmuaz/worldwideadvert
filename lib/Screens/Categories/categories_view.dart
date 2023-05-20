@@ -10,7 +10,7 @@ class CategoriesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, dynamic>> gridDB = [
+    final List<Map<String, dynamic>> categoriesItems = [
       {
         "Image":
             "https://images.pexels.com/photos/2833037/pexels-photo-2833037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -144,10 +144,10 @@ class CategoriesPage extends StatelessWidget {
                       crossAxisSpacing: 5.0,
                       mainAxisSpacing: 5.0,
                       mainAxisExtent: 200.0),
-                  itemCount: gridDB.length,
+                  itemCount: categoriesItems.length,
                   itemBuilder: (_, index) {
-                    return myAppContiner("${gridDB.elementAt(index)["title"]}",
-                        "${gridDB.elementAt(index)["Image"]}");
+                    return myAppContiner("${categoriesItems.elementAt(index)["title"]}",
+                        "${categoriesItems.elementAt(index)["Image"]}");
                   },
                 ),
               )

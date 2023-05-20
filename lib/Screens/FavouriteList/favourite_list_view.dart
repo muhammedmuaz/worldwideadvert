@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:worldwideadverts/Screens/widgets/app_container1.dart';
 import 'package:worldwideadverts/Screens/widgets/drawer.dart';
 
@@ -8,6 +7,44 @@ class FavouriteListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, dynamic>> favouriteItems = [
+      {
+        "Image":
+            "https://images.pexels.com/photos/1549326/pexels-photo-1549326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "title": "JEMBI HEALTH SYSTEMS",
+        "label": "Istanbul, Turkey"
+      },
+      {
+        "Image":
+            "https://images.pexels.com/photos/323682/pexels-photo-323682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "title": "JEMBI HEALTH SYSTEMS",
+        "label": "Istanbul, Turkey"
+      },
+      {
+        "Image":
+            "https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "title": "JEMBI HEALTH SYSTEMS",
+        "label": "Istanbul, Turkey"
+      },
+      {
+        "Image":
+            "https://images.pexels.com/photos/15252557/pexels-photo-15252557/free-photo-of-man-taking-photo-on-street.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "title": "JEMBI HEALTH SYSTEMS",
+        "label": "Istanbul, Turkey"
+      },
+      {
+        "Image":
+            "https://images.pexels.com/photos/1549326/pexels-photo-1549326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "title": "JEMBI HEALTH SYSTEMS",
+        "label": "Istanbul, Turkey"
+      },
+      {
+        "Image":
+            "https://images.pexels.com/photos/323682/pexels-photo-323682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "title": "JEMBI HEALTH SYSTEMS",
+        "label": "Istanbul, Turkey"
+      },
+    ];
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -70,24 +107,24 @@ class FavouriteListPage extends StatelessWidget {
                 height: 12,
               ),
               Expanded(
-                  child: GridView.count(
-                crossAxisCount: 2,
-                childAspectRatio: 1 / 2,
-                children: [
-                  myAppContiner1("JEMBI HEALTH SYSTEMS", "Istanbul, Turkey",
-                      "https://images.pexels.com/photos/1549326/pexels-photo-1549326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                  myAppContiner1("JEMBI HEALTH SYSTEMS", "South Africa",
-                      "https://images.pexels.com/photos/323682/pexels-photo-323682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                  myAppContiner1("JEMBI HEALTH SYSTEMS", "South Africa",
-                      "https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                  myAppContiner1("JEMBI HEALTH SYSTEMS", "South Africa",
-                      "https://images.pexels.com/photos/15252557/pexels-photo-15252557/free-photo-of-man-taking-photo-on-street.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                  myAppContiner1("JEMBI HEALTH SYSTEMS", "South Africa",
-                      "https://images.pexels.com/photos/15252557/pexels-photo-15252557/free-photo-of-man-taking-photo-on-street.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                  myAppContiner1("JEMBI HEALTH SYSTEMS", "South Africa",
-                      "https://images.pexels.com/photos/15252557/pexels-photo-15252557/free-photo-of-man-taking-photo-on-street.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                ],
-              ))
+                child: GridView.builder(
+                  shrinkWrap: true,
+                  // physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 5.0,
+                    mainAxisSpacing: 5.0,
+                    mainAxisExtent: 250.0,
+                  ),
+                  itemCount: favouriteItems.length,
+                  itemBuilder: (_, index) {
+                    return myAppContiner1(
+                        "${favouriteItems.elementAt(index)["title"]}",
+                        "${favouriteItems.elementAt(index)["label"]}",
+                        "${favouriteItems.elementAt(index)["Image"]}");
+                  },
+                ),
+              )
             ],
           ),
         ),

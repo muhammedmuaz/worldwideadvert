@@ -7,8 +7,6 @@ Widget myAppContiner1(
     elevation: 1,
     color: Colors.white,
     child: Container(
-      height: 200,
-      width: 200.0,
       decoration: BoxDecoration(
           // color: Colors.amberAccent,
           borderRadius: BorderRadius.circular(16)),
@@ -32,7 +30,7 @@ Widget myAppContiner1(
             child: Text(
               title.toString(),
               style: GoogleFonts.playfairDisplay(
-                  fontSize: 20, fontWeight: FontWeight.bold),
+                  fontSize: 16, fontWeight: FontWeight.bold),
             ),
           ),
           Row(
@@ -48,7 +46,7 @@ Widget myAppContiner1(
               Text(
                 label.toString(),
                 style: GoogleFonts.playfairDisplay(
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: Colors.green),
               ),
