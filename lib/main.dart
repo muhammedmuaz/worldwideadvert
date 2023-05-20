@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:worldwideadverts/Screens/AboutUs/about_us_view.dart';
+import 'package:worldwideadverts/Screens/Categories/categories_view.dart';
+import 'package:worldwideadverts/Screens/FavouriteList/favourite_list_view.dart';
+import 'package:worldwideadverts/Screens/Help&ContactUs/help_contact_view.dart';
 import 'package:worldwideadverts/Screens/HomeScreen/homepage.dart';
 import 'package:worldwideadverts/Screens/PrivacyPolicy/privacy_policy_view.dart';
 import 'package:worldwideadverts/Screens/SettingScreen/settings_view.dart';
@@ -67,7 +70,7 @@ class MyApp extends StatelessWidget {
       //   LoginScreen: (context) => LoginScreen(),
       //   // DashboardScreen.routeName: (context) => const DashboardScreen(),
       // },
-      home: PRivacyView(),
+      home: FavouriteListPage(),
     );
   }
 }

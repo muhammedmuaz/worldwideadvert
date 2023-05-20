@@ -1,8 +1,8 @@
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:get/get.dart';
+
 import 'package:worldwideadverts/Screens/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
