@@ -84,7 +84,7 @@ class MyDrawer extends StatelessWidget {
                 child: myDrawerItem("My Wallet", Icons.home)),
             GestureDetector(
                 onTap: () {
-                  Get.to(const SettingView());
+                  Get.to(const SettingPage());
                 },
                 child: myDrawerItem("Settings", Icons.home)),
             const Divider(

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
+import 'package:worldwideadverts/view/AboutUs/about_us_view.dart';
+import 'package:worldwideadverts/view/Help&ContactUs/help_contact_view.dart';
+import 'package:worldwideadverts/view/Invoices/invoices_view.dart';
+import 'package:worldwideadverts/view/ManageAddress/manage_orders_view.dart';
+import 'package:worldwideadverts/view/PrivacyPolicy/privacy_policy_view.dart';
 import 'package:worldwideadverts/view/widgets/my_drawer_item.dart';
 
-class SettingView extends StatelessWidget {
-  const SettingView({super.key});
+class SettingPage extends StatelessWidget {
+  const SettingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,13 +66,24 @@ class SettingView extends StatelessWidget {
               'Change Password',
               Icons.lock_outlined,
             ),
-            myDrawerItem(
-              'Invoices',
-              Icons.attach_money,
+            GestureDetector(
+              onTap: (){
+                Get.to(const InvoicePage());
+              },
+              child: myDrawerItem(
+                'Invoices',
+                Icons.attach_money,
+              ),
             ),
-            myDrawerItem(
-              'Manage addresses',
-              Icons.add_location,
+            GestureDetector(
+              onTap: (){
+                Get.to(const ManageOrderPage());
+              }
+              ,
+              child: myDrawerItem(
+                'Manage addresses',
+                Icons.add_location,
+              ),
             ),
             const SizedBox(
               height: 40.0,
@@ -97,17 +113,32 @@ class SettingView extends StatelessWidget {
             const SizedBox(
               height: 30.0,
             ),
-            myDrawerItem(
-              'Help & Contact Us',
-              Icons.phone_outlined,
+            GestureDetector(
+              onTap: (){
+                Get.to(const ContactPage());
+              },
+              child: myDrawerItem(
+                'Help & Contact Us',
+                Icons.phone_outlined,
+              ),
             ),
-            myDrawerItem(
-              'Privacy policy',
-              Icons.privacy_tip,
+            GestureDetector(
+              onTap: (){
+                Get.to(const PrivacyPage());
+              },
+              child: myDrawerItem(
+                'Privacy policy',
+                Icons.privacy_tip,
+              ),
             ),
-            myDrawerItem(
-              'About Us',
-              Icons.info_outlined,
+            GestureDetector(
+              onTap: (){
+                Get.to(const AbousUsView());
+              },
+              child: myDrawerItem(
+                'About Us',
+                Icons.info_outlined,
+              ),
             ),
           ],
         ),

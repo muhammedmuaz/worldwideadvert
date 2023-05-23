@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:worldwideadverts/view/widgets/app_card.dart';
 
-class ContactUsView extends StatelessWidget {
-  const ContactUsView({super.key});
+class ContactPage extends StatelessWidget {
+  const ContactPage({super.key});
   final String heading1 =
       "World Wide Adverts is a UK registered business with the company number 13241715 .We are a digital marketing company that offers a platform to grow business and brands.Our aim is to offer global  market place for all by allowing all businesses big ,small and individual  to advertise thier products and services.It is our goal to engage buisnesses and customers in this global marketplace.We aim to make it easier for everyone around the world to have access to as many services and products as possible within the legal parameters of their sovereignty (country )and the world (other countries).We are here to offer a better and bigger market for trade.Our services cater for, all buyers, sellers, service providers, events planners and much more.We aim to be the biggest one-stop marketplace for as many services and products as possible.We are here to help businesses grow thier brands and services.";
   final String heading2 =

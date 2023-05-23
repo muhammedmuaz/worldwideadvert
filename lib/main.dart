@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
       //   LoginScreen: (context) => LoginScreen(),
       //   // DashboardScreen.routeName: (context) => const DashboardScreen(),
       // },
-      home: FavouriteListPage(),
+      home: HomePage(),
     );
   }
 }

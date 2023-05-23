@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ManageOrderView extends StatelessWidget {
-  const ManageOrderView({super.key});
+class ManageOrderPage extends StatelessWidget {
+  const ManageOrderPage({super.key});
 
   @override
   Widget build(BuildContext context) {
