@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:worldwideadverts/Screens/widgets/drawer.dart';
+import 'package:worldwideadverts/view/widgets/drawer.dart';
 
 class PrivacyPage extends StatelessWidget {
   const PrivacyPage({super.key});

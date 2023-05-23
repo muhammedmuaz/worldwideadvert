@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:get/get.dart';
-import 'package:worldwideadverts/Screens/HomeScreen/homepage.dart';
+import 'package:worldwideadverts/view/HomeScreen/homepage.dart';
 
 class LoginScreen extends StatelessWidget {
   @override

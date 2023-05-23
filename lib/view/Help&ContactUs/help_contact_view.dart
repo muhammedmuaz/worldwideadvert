@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:worldwideadverts/Screens/widgets/app_card.dart';
+import 'package:worldwideadverts/view/widgets/app_card.dart';
 
 class ContactUsView extends StatelessWidget {
   const ContactUsView({super.key});

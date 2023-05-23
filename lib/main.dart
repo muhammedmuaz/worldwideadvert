@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:worldwideadverts/Screens/AboutUs/about_us_view.dart';
-import 'package:worldwideadverts/Screens/Categories/categories_view.dart';
-import 'package:worldwideadverts/Screens/FavouriteList/favourite_list_view.dart';
-import 'package:worldwideadverts/Screens/Help&ContactUs/help_contact_view.dart';
-import 'package:worldwideadverts/Screens/HomeScreen/homepage.dart';
-import 'package:worldwideadverts/Screens/PrivacyPolicy/privacy_policy_view.dart';
-import 'package:worldwideadverts/Screens/SettingScreen/settings_view.dart';
-import 'Screens/Auth/loginscreen.dart';
+import 'package:worldwideadverts/view/AboutUs/about_us_view.dart';
+import 'package:worldwideadverts/view/Categories/categories_view.dart';
+import 'package:worldwideadverts/view/FavouriteList/favourite_list_view.dart';
+import 'package:worldwideadverts/view/Help&ContactUs/help_contact_view.dart';
+import 'package:worldwideadverts/view/HomeScreen/homepage.dart';
+import 'package:worldwideadverts/view/PrivacyPolicy/privacy_policy_view.dart';
+import 'package:worldwideadverts/view/SettingScreen/settings_view.dart';
+import 'view/Auth/loginscreen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(

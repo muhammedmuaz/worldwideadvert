@@ -1,9 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:worldwideadverts/Screens/widgets/app_container1.dart';
-import 'package:worldwideadverts/Screens/widgets/app_cotainer.dart';
-import 'package:worldwideadverts/Screens/widgets/drawer.dart';
+import 'package:worldwideadverts/view/widgets/app_container1.dart';
+import 'package:worldwideadverts/view/widgets/app_cotainer.dart';
+import 'package:worldwideadverts/view/widgets/drawer.dart';
 
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({super.key});

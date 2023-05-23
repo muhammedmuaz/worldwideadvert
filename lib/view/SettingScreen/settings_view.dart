@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
-import 'package:worldwideadverts/Screens/widgets/my_drawer_item.dart';
+import 'package:worldwideadverts/view/widgets/my_drawer_item.dart';
 
 class SettingView extends StatelessWidget {
   const SettingView({super.key});

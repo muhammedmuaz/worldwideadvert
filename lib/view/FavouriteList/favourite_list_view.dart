@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:worldwideadverts/Screens/widgets/app_container1.dart';
-import 'package:worldwideadverts/Screens/widgets/drawer.dart';
+import 'package:worldwideadverts/view/widgets/app_container1.dart';
+import 'package:worldwideadverts/view/widgets/drawer.dart';
 
 class FavouriteListPage extends StatelessWidget {
   const FavouriteListPage({super.key});

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:worldwideadverts/Screens/Categories/categories_view.dart';
-import 'package:worldwideadverts/Screens/FavouriteList/favourite_list_view.dart';
-import 'package:worldwideadverts/Screens/HomeScreen/homepage.dart';
-import 'package:worldwideadverts/Screens/MyOrders/my_orders_view.dart';
-import 'package:worldwideadverts/Screens/MyWallet/my_wallet_view.dart';
-import 'package:worldwideadverts/Screens/RatingReview/rating_review_view.dart';
-import 'package:worldwideadverts/Screens/SettingScreen/settings_view.dart';
-import 'package:worldwideadverts/Screens/widgets/my_drawer_item.dart';
+import 'package:worldwideadverts/view/Categories/categories_view.dart';
+import 'package:worldwideadverts/view/FavouriteList/favourite_list_view.dart';
+import 'package:worldwideadverts/view/HomeScreen/homepage.dart';
+import 'package:worldwideadverts/view/MyOrders/my_orders_view.dart';
+import 'package:worldwideadverts/view/MyWallet/my_wallet_view.dart';
+import 'package:worldwideadverts/view/RatingReview/rating_review_view.dart';
+import 'package:worldwideadverts/view/SettingScreen/settings_view.dart';
+import 'package:worldwideadverts/view/widgets/my_drawer_item.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});

@@ -2,9 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:worldwideadverts/Screens/Categories/categories_view.dart';
+import 'package:worldwideadverts/view/Categories/categories_view.dart';
 
-import 'package:worldwideadverts/Screens/widgets/drawer.dart';
+import 'package:worldwideadverts/view/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
