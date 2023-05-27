@@ -1,6 +1,8 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:worldwideadverts/view/AboutUs/about_us_view.dart';
 import 'package:worldwideadverts/view/Categories/categories_view.dart';
 import 'package:worldwideadverts/view/FavouriteList/favourite_list_view.dart';
@@ -8,15 +10,25 @@ import 'package:worldwideadverts/view/Help&ContactUs/help_contact_view.dart';
 import 'package:worldwideadverts/view/HomeScreen/homepage.dart';
 import 'package:worldwideadverts/view/PrivacyPolicy/privacy_policy_view.dart';
 import 'package:worldwideadverts/view/SettingScreen/settings_view.dart';
+import 'network/enviroment.dart';
 import 'view/Auth/loginscreen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       systemNavigationBarColor:
           SystemUiOverlayStyle.dark.systemNavigationBarColor,
     ),
   );
+
+  await GetStorage.init();
+  // const String environment = String.fromEnvironment(
+  //   'ENVIRONMENT',
+  //   defaultValue: Environment.dev,
+  // );
+
+  Enviroment().initConfig('ENVIRONMENT');
 
   runApp(const MyApp());
 }
@@ -29,6 +41,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'World Wide Adverts',
       debugShowCheckedModeBanner: false,
+      builder: BotToastInit(),
+      navigatorObservers: [BotToastNavigatorObserver()],
       theme: ThemeData(
         textSelectionTheme:
             const TextSelectionThemeData(cursorColor: Colors.orange),
@@ -70,7 +84,7 @@ class MyApp extends StatelessWidget {
       //   LoginScreen: (context) => LoginScreen(),
       //   // DashboardScreen.routeName: (context) => const DashboardScreen(),
       // },
-      home: HomePage(),
+      home: LoginScreen(),
     );
   }
 }

@@ -16,7 +16,9 @@ class Api {
   Future<dynamic> get(String url, {fullUrl}) async {
     if (url != "" || fullUrl != "") {
       try {
-        final response = await http.get(fullUrl);
+        String token = sp.read("token");
+        final response =
+            await http.get(fullUrl, headers: {"access_token": token});
         return response;
       } on SocketException {
         throw FetchDataException('No Internet connection');
@@ -33,12 +35,6 @@ class Api {
     required email,
     required password,
   }) async {
-    // Dio dio = Dio();
-    // if (auth == false) {
-    //   // print(sp.read ('token'));
-    //   dio.options.headers['Authorization'] = "Bearer ${sp.read('token')}";
-    // }
-
     try {
       Map<String, String> headers = {
         'Content-Type': 'application/json',
@@ -50,15 +46,27 @@ class Api {
         body: body,
       );
       if (jsonDecode(response.body)["Success"] == true) {
-        return jsonDecode(response.body);
+        print('body');
+        print(jsonDecode(response.body));
+        print("token");
+        print(jsonDecode(response.body)["data"]["access_token"]);
+        sp.write('token', jsonDecode(response.body)["data"]["access_token"]);
+        print(jsonDecode(response.body));
+        // return jsonDecode(response.body);
       } else {
-        var parts = jsonDecode(response.body)['Message']
-            .replaceAll(RegExp('<[^>]*>'), '');
-        errorIcon(parts);
+        print(response.statusCode);
+        print("error coming");
+        print(response.body);
+        return false;
+        // var parts = jsonDecode(response.body)['Message']
+        //     .replaceAll(RegExp('<[^>]*>'), '');
+        // errorIcon(parts);
       }
     } on SocketException {
       throw FetchDataException('No Internet connection');
     } catch (e) {
+      print("error coming");
+      print(e.toString());
       throw errorIcon(e.toString());
     }
   }
