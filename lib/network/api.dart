@@ -3,9 +3,11 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:worldwideadverts/view/HomeScreen/homepage.dart';
 import 'appException.dart';
 import 'enviroment.dart';
 import 'package:http/http.dart' as http;
+import 'package:get/get.dart';
 
 final String baseUrl = Enviroment().config.baseUrl;
 final String apiUrl = Enviroment().config.apiUrl;
@@ -16,7 +18,8 @@ class Api {
   Future<dynamic> get(String url, {fullUrl}) async {
     if (url != "" || fullUrl != "") {
       try {
-        final response = await http.get(fullUrl);
+        // sp.write("token", jsonDecode(response.body)["data"]["access_token"]);
+        final response = await http.get(Uri.parse(fullUrl));
         print(response.body);
         return response;
       } on SocketException {
@@ -29,7 +32,7 @@ class Api {
 
   // Post Login
 
-  Future<dynamic> postLogin(
+  Future<dynamic>? postLogin(
     url, {
     required email,
     required password,
@@ -49,13 +52,18 @@ class Api {
         headers: headers,
         body: body,
       );
-      if (jsonDecode(response.body)["Success"] == true) {
-        return jsonDecode(response.body);
+      if (response.statusCode == 200) {
+        sp.write("token", jsonDecode(response.body)["data"]["access_token"]);
+        // print();
+        Get.to(const HomePage());
       } else {
-        
+        // print("response body");
+        // print(response.statusCode);
+        // print(response.body);
+        // print(jsonDecode(response.body)['message']);
+        errorIcon(jsonDecode(response.body)['message']);
         // var parts = jsonDecode(response.body)['Message']
         //     .replaceAll(RegExp('<[^>]*>'), '');
-        // errorIcon(parts);
       }
     } on SocketException {
       throw FetchDataException('No Internet connection');

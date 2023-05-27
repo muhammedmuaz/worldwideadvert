@@ -1,3 +1,4 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -12,7 +13,7 @@ import 'package:worldwideadverts/view/PrivacyPolicy/privacy_policy_view.dart';
 import 'package:worldwideadverts/view/SettingScreen/settings_view.dart';
 import 'view/Auth/loginscreen.dart';
 
-void main() async{
+void main() async {
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       systemNavigationBarColor:
@@ -20,7 +21,7 @@ void main() async{
     ),
   );
 
- WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
   // const String environment = String.fromEnvironment(
   //   'ENVIRONMENT',
@@ -39,6 +40,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'World Wide Adverts',
       debugShowCheckedModeBanner: false,
+      builder: BotToastInit(),
+      navigatorObservers: [BotToastNavigatorObserver()],
       theme: ThemeData(
         textSelectionTheme:
             const TextSelectionThemeData(cursorColor: Colors.orange),

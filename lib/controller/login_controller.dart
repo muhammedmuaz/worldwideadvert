@@ -4,18 +4,26 @@ import 'package:get/state_manager.dart';
 import 'package:worldwideadverts/network/api.dart';
 import 'package:worldwideadverts/view/HomeScreen/homepage.dart';
 
-class loginController extends GetxController {
+class LoginController extends GetxController {
   bool isloggingin = false;
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController emailController =
+      TextEditingController(text: "rizky@gmail.com");
+  TextEditingController passwordController =
+      TextEditingController(text: "asdasd");
 
-  login() {
+  login() async {
     String url = "api/v1/auth/login";
     print(apiUrl + url);
     isloggingin = true;
-    Api().postLogin(apiUrl + url,
+    update();
+    var response = await Api().postLogin(apiUrl + url,
         email: emailController.text, password: passwordController.text);
+    if (response != null) {
+      print(response);
+      print("its null");
+    }
     isloggingin = false;
-    Get.to(const HomePage());
+    update();
+    // Get.to(const HomePage());
   }
 }
