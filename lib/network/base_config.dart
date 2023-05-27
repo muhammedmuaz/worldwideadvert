@@ -6,7 +6,7 @@ abstract class BaseConfig {
 
 class DevConfig implements BaseConfig{
 @override
-String get apiUrl => "http://192.168.19.23:8002/";
+String get apiUrl => "https://api.worldwideadverts.info/";
 @override
 String get baseUrl => "http://192.168.19.23:8002/";
 @override

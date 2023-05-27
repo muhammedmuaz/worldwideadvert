@@ -17,6 +17,7 @@ class Api {
     if (url != "" || fullUrl != "") {
       try {
         final response = await http.get(fullUrl);
+        print(response.body);
         return response;
       } on SocketException {
         throw FetchDataException('No Internet connection');

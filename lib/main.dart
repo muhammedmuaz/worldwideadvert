@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:worldwideadverts/network/enviroment.dart';
 import 'package:worldwideadverts/view/AboutUs/about_us_view.dart';
 import 'package:worldwideadverts/view/Categories/categories_view.dart';
 import 'package:worldwideadverts/view/FavouriteList/favourite_list_view.dart';
@@ -10,7 +12,7 @@ import 'package:worldwideadverts/view/PrivacyPolicy/privacy_policy_view.dart';
 import 'package:worldwideadverts/view/SettingScreen/settings_view.dart';
 import 'view/Auth/loginscreen.dart';
 
-void main() {
+void main() async{
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       systemNavigationBarColor:
@@ -18,6 +20,14 @@ void main() {
     ),
   );
 
+ WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
+  // const String environment = String.fromEnvironment(
+  //   'ENVIRONMENT',
+  //   defaultValue: Environment.dev,
+  // );
+
+  Enviroment().initConfig('ENVIRONMENT');
   runApp(const MyApp());
 }
 
