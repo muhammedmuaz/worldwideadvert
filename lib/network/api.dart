@@ -38,7 +38,6 @@ class Api {
     //   // print(sp.read ('token'));
     //   dio.options.headers['Authorization'] = "Bearer ${sp.read('token')}";
     // }
-
     try {
       Map<String, String> headers = {
         'Content-Type': 'application/json',
@@ -52,9 +51,10 @@ class Api {
       if (jsonDecode(response.body)["Success"] == true) {
         return jsonDecode(response.body);
       } else {
-        var parts = jsonDecode(response.body)['Message']
-            .replaceAll(RegExp('<[^>]*>'), '');
-        errorIcon(parts);
+        
+        // var parts = jsonDecode(response.body)['Message']
+        //     .replaceAll(RegExp('<[^>]*>'), '');
+        // errorIcon(parts);
       }
     } on SocketException {
       throw FetchDataException('No Internet connection');

@@ -1,4 +1,4 @@
-package com.example.worldwideadverts
+package com.example.worldwideadvert
 
 import io.flutter.embedding.android.FlutterActivity
 
