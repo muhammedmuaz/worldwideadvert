@@ -2,14 +2,31 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:worldwideadverts/controller/home/home_controller.dart';
 import 'package:worldwideadverts/view/Categories/categories_view.dart';
 
 import 'package:worldwideadverts/view/widgets/drawer.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+  
+  @override
+  State<HomePage> createState() => _HomePageState();
+
+}
+
+class _HomePageState extends State<HomePage> {
+  HomeController controller = Get.put(HomeController());
+  
+@override
+void initState() {
+    // TODO: implement initState
+    controller.getApi();
+    super.initState();
+  }
 
   @override
+
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(

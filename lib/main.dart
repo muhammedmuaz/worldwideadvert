@@ -29,7 +29,6 @@ void main() async {
   // );
 
   Enviroment().initConfig('ENVIRONMENT');
-
   runApp(const MyApp());
 }
 
