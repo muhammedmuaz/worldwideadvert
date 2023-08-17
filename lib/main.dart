@@ -13,8 +13,7 @@ import 'package:worldwideadverts/view/SettingScreen/settings_view.dart';
 import 'network/enviroment.dart';
 import 'view/Auth/loginscreen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+void main() async{
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       systemNavigationBarColor:
@@ -22,6 +21,7 @@ void main() async {
     ),
   );
 
+ WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
   // const String environment = String.fromEnvironment(
   //   'ENVIRONMENT',

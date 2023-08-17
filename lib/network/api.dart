@@ -3,9 +3,11 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:worldwideadverts/view/HomeScreen/homepage.dart';
 import 'appException.dart';
 import 'enviroment.dart';
 import 'package:http/http.dart' as http;
+import 'package:get/get.dart';
 
 final String baseUrl = Enviroment().config.baseUrl;
 final String apiUrl = Enviroment().config.apiUrl;
@@ -16,9 +18,8 @@ class Api {
   Future<dynamic> get(String url, {fullUrl}) async {
     if (url != "" || fullUrl != "") {
       try {
-        String token = sp.read("token");
-        final response =
-            await http.get(fullUrl, headers: {"access_token": token});
+        final response = await http.get(fullUrl);
+        print(response.body);
         return response;
       } on SocketException {
         throw FetchDataException('No Internet connection');
@@ -30,11 +31,17 @@ class Api {
 
   // Post Login
 
-  Future<dynamic> postLogin(
+  Future<dynamic>? postLogin(
     url, {
     required email,
     required password,
   }) async {
+    // Dio dio = Dio();
+    // if (auth == false) {
+    //   // print(sp.read ('token'));
+    //   dio.options.headers['Authorization'] = "Bearer ${sp.read('token')}";
+    // }
+
     try {
       Map<String, String> headers = {
         'Content-Type': 'application/json',
@@ -46,21 +53,11 @@ class Api {
         body: body,
       );
       if (jsonDecode(response.body)["Success"] == true) {
-        print('body');
-        print(jsonDecode(response.body));
-        print("token");
-        print(jsonDecode(response.body)["data"]["access_token"]);
-        sp.write('token', jsonDecode(response.body)["data"]["access_token"]);
-        print(jsonDecode(response.body));
-        // return jsonDecode(response.body);
+        return jsonDecode(response.body);
       } else {
-        print(response.statusCode);
-        print("error coming");
-        print(response.body);
-        return false;
-        // var parts = jsonDecode(response.body)['Message']
-        //     .replaceAll(RegExp('<[^>]*>'), '');
-        // errorIcon(parts);
+        var parts = jsonDecode(response.body)['Message']
+            .replaceAll(RegExp('<[^>]*>'), '');
+        errorIcon(parts);
       }
     } on SocketException {
       throw FetchDataException('No Internet connection');

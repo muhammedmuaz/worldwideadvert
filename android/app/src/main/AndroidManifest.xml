@@ -1,6 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.worldwideadvert">
+<<<<<<< HEAD
    <uses-permission android:name="android.permission.INTERNET"/>
+=======
+>>>>>>> b567877800332727b1d50583288ca880105139f2
    <application
         android:label="worldwideadvert"
         android:name="${applicationName}"
